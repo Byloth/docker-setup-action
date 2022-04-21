@@ -1,13 +1,42 @@
-import * as core from "@actions/core";
+import { getInput } from "@actions/core";
 
-export interface Inputs
+export class Inputs
 {
-    shaLength: number;
+    public static GetInputAsNumber(name: string, validator?: (value: number) => void): number
+    {
+        const input = getInput(name);
+        const value = parseInt(input);
+
+        if (validator !== undefined)
+        {
+            validator(value);
+        }
+
+        return value;
+    }
+
+    public readonly shaLength: number;
+
+    public constructor()
+    {
+        this.shaLength = Inputs.GetInputAsNumber("shaLength", (value: number) =>
+        {
+            if (value < 1)
+            {
+                // TODO!
+            }
+        });
+    }
 }
 
-export function getInputs(): Inputs
+export class Context
 {
-    return {
-        shaLength: parseInt(core.getInput("shaLength"))
-    };
+    public readonly inputs: Inputs;
+
+    public constructor()
+    {
+        this.inputs = new Inputs();
+    }
 }
+
+export default new Context();

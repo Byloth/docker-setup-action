@@ -10,7 +10,7 @@ export async function run(): Promise<void>
         const inputs = getInputs();
 
         const sha = github.context.sha;
-        const shortSha = sha.substr(0, inputs.shaLength);
+        const shortSha = sha.substring(0, inputs.shaLength);
 
         core.setOutput("shortSha", shortSha);
         core.exportVariable("GITHUB_SHORT_SHA", shortSha);
