@@ -1,0 +1,16 @@
+name: 'Docker environment setup'
+description: 'An action to easily set up a Docker build environment with some useful environment variables.'
+author: 'Matteo Bilotta (Byloth)'
+inputs:
+	shaLength:
+    description: 'The length of the SHA to use as the image tag.'
+    required: false
+    default: '7'
+
+outputs:
+  sha:
+    description: 'The SHA to use as the image tag.'
+
+runs:
+  using: 'node16'
+  main: './dist/docker-setup-action.umd.js'
