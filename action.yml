@@ -5,25 +5,19 @@ inputs:
   registry:
     description: 'The registry to prepend to the Docker image name.'
     required: false
-
   repository:
     description: 'The repository to use as a Docker image name.'
-    default: '${{ github.repository }}'
-
+    default: ${{ github.repository }}
 	shaLength:
     description: 'The length to shorten the SHA to use as a Docker image tag.'
     default: '7'
-
 outputs:
   shortSha:
     description: 'The shortened SHA of the current commit.'
-
   branchSlug:
     description: 'The slugified version of the branch name.'
-
   dockerImage:
     description: 'The Docker image name matching the repository.'
-
 runs:
   using: 'node16'
   main: './dist/docker-setup-action.umd.js'
