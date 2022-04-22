@@ -26,7 +26,7 @@ export async function run(): Promise<void>
         /** */
 
         const registry = Context.inputs.registry;
-        const repository = Context.inputs.repository;
+        const repository = Context.inputs.repository.toLowerCase();
 
         const dockerImage = registry ? `${registry}/${repository}` : repository;
 
