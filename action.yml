@@ -8,7 +8,7 @@ inputs:
 
   repository:
     description: 'The repository to use as a Docker image name.'
-    default: ${{ github.repository }}
+    default: '${{ github.repository }}'
 
 	shaLength:
     description: 'The length to shorten the SHA to use as a Docker image tag.'
