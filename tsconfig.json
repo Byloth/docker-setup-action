@@ -24,7 +24,10 @@
       "ScriptHost",
       "WebWorker"
     ],
-    "types": ["vite/client"]
+    "types": [
+      "node",
+      "vite/client"
+    ]
   },
   "include": [
     "src/**/*.ts",

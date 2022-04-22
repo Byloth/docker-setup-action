@@ -1,19 +1,37 @@
 import * as core from "@actions/core";
-import * as github from "@actions/github";
+import slugify from "slugify";
 
-import { getInputs } from "./context";
+import Context from "./context";
 
 export async function run(): Promise<void>
 {
     try
     {
-        const inputs = getInputs();
+        const commitSha = Context.env.commitSha;
+        const shaLength = Context.inputs.shaLength;
 
-        const sha = github.context.sha;
-        const shortSha = sha.substring(0, inputs.shaLength);
+        const shortSha = commitSha.substring(0, shaLength);
 
-        core.setOutput("shortSha", shortSha);
         core.exportVariable("GITHUB_SHORT_SHA", shortSha);
+        core.setOutput("shortSha", shortSha);
+
+        /** */
+
+        const branchName = Context.env.branchName;
+        const branchSlug = slugify(branchName);
+
+        core.exportVariable("GITHUB_REF_SLUG", branchSlug);
+        core.setOutput("branchSlug", branchSlug);
+
+        /** */
+
+        const registry = Context.inputs.registry;
+        const repository = Context.inputs.repository;
+
+        const dockerImage = registry ? `${registry}/${repository}` : repository;
+
+        core.exportVariable("DOCKER_IMAGE", dockerImage);
+        core.setOutput("dockerImage", dockerImage);
     }
     catch (exc)
     {

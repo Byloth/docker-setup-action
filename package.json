@@ -38,10 +38,10 @@
   },
   "dependencies": {
     "@actions/core": "^1.6.0",
-    "@actions/github": "^5.0.1"
+    "slugify": "^1.6.5"
   },
   "devDependencies": {
-    "@byloth/eslint-config-typescript": "^2.1.1",
+    "@byloth/eslint-config-typescript": "^2.2.0",
     "@types/node": "~16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",

@@ -1,15 +1,28 @@
 name: 'Docker environment setup'
 description: 'An action to easily set up a Docker build environment with some useful environment variables.'
-author: 'Matteo Bilotta (Byloth)'
+author: 'Matteo Bilotta <me@byloth.net>'
 inputs:
-	shaLength:
-    description: 'The length of the SHA to use as the image tag.'
+  registry:
+    description: 'The registry to prepend to the Docker image name.'
     required: false
+
+  repository:
+    description: 'The repository to use as a Docker image name.'
+    default: ${{ github.repository }}
+
+	shaLength:
+    description: 'The length to shorten the SHA to use as a Docker image tag.'
     default: '7'
 
 outputs:
-  sha:
-    description: 'The SHA to use as the image tag.'
+  shortSha:
+    description: 'The shortened SHA of the current commit.'
+
+  branchSlug:
+    description: 'The slugified version of the branch name.'
+
+  dockerImage:
+    description: 'The Docker image name matching the repository.'
 
 runs:
   using: 'node16'
