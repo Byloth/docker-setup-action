@@ -3,8 +3,9 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "node",
+    "declaration": true,
     "strict": true,
-    "noEmit": true,
+    "noImplicitAny": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -17,16 +18,13 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "baseUrl": ".",
+    "outDir": "./lib",
     "paths": { "@/*": ["src/*"] },
     "lib": [
       "ESNext",
       "DOM",
       "ScriptHost",
       "WebWorker"
-    ],
-    "types": [
-      "node",
-      "vite/client"
     ]
   },
   "include": [

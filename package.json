@@ -17,21 +17,9 @@
     "type": "git",
     "url": "git+https://github.com/Byloth/docker-setup-action.git"
   },
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/docker-setup-action.umd.js",
-  "module": "./dist/docker-setup-action.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/docker-setup-action.es.js",
-      "require": "./dist/docker-setup-action.umd.js"
-    }
-  },
+  "main": "./lib/index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
+    "build": "tsc && ncc build",
     "lint": "eslint --ext .js,.json,.ts --ignore-path .gitignore .",
     "lint:prod": "export NODE_ENV=\"production\" && yarn lint",
     "ci": "yarn install --frozen-lockfile"
@@ -45,8 +33,8 @@
     "@types/node": "~16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.20.0",
     "@typescript-eslint/parser": "^5.20.0",
+    "@vercel/ncc": "^0.33.4",
     "eslint": "^8.13.0",
-    "typescript": "^4.6.3",
-    "vite": "^2.9.5"
+    "typescript": "^4.6.3"
   }
 }
