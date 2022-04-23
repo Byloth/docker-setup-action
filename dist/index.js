@@ -1864,13 +1864,14 @@ async function run() {
         core.exportVariable("GITHUB_SHORT_SHA", shortSha);
         core.setOutput("shortSha", shortSha);
         /** */
+        slugify_default().extend({ "/": "-" });
         const branchName = context.env.branchName;
         const branchSlug = slugify_default()(branchName);
         core.exportVariable("GITHUB_REF_SLUG", branchSlug);
         core.setOutput("branchSlug", branchSlug);
         /** */
         const registry = context.inputs.registry;
-        const repository = context.inputs.repository;
+        const repository = context.inputs.repository.toLowerCase();
         const dockerImage = registry ? `${registry}/${repository}` : repository;
         core.exportVariable("DOCKER_IMAGE", dockerImage);
         core.setOutput("dockerImage", dockerImage);

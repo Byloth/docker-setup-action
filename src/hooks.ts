@@ -17,6 +17,8 @@ export async function run(): Promise<void>
 
         /** */
 
+        slugify.extend({"/": "-"});
+
         const branchName = Context.env.branchName;
         const branchSlug = slugify(branchName);
 
