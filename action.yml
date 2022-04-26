@@ -1,6 +1,10 @@
 name: 'Docker environment setup'
 description: 'An action to easily set up a Docker build environment with some useful environment variables.'
 author: 'Matteo Bilotta <me@byloth.net>'
+branding:
+  icon: 'anchor'
+  color: 'blue'
+
 inputs:
   registry:
     description: 'The registry to prepend to the Docker image name.'

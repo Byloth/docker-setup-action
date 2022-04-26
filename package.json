@@ -1,8 +1,13 @@
 {
   "name": "@byloth/docker-setup-action",
-  "version": "0.0.1",
-  "description": "",
-  "keywords": [],
+  "version": "1.0.0",
+  "description": "An action to easily set up a Docker build environment with some useful environment variables.",
+  "keywords": [
+    "github-actions",
+    "docker",
+    "setup",
+    "environment-variables"
+  ],
   "homepage": "https://github.com/Byloth/docker-setup-action#readme",
   "bugs": {
     "url": "https://github.com/Byloth/docker-setup-action/issues"
