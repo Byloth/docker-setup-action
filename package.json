@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/Byloth/docker-setup-action/issues"
   },
-  "license": "GPL-3.0-or-later",
+  "license": "GPL-3.0",
   "author": {
     "name": "Matteo Bilotta",
     "email": "me@byloth.net",
