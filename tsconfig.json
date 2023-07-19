@@ -2,34 +2,34 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "node",
-    "declaration": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "isolatedModules": true,
-    "experimentalDecorators": true,
-    "useDefineForClassFields": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "baseUrl": ".",
-    "outDir": "./lib",
-    "paths": { "@/*": ["src/*"] },
+    "moduleResolution": "NodeNext",
     "lib": [
       "ESNext",
       "DOM",
-      "ScriptHost",
+      "DOM.Iterable",
       "WebWorker"
-    ]
+    ],
+    "strict": true,
+    "noImplicitThis": true,
+    "sourceMap": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "outDir": "./lib",
+    "paths": { "@/*": ["src/*"] },
+    "types": ["node"]
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts"
-  ],
-  "exclude": ["node_modules"]
+  "include": ["src"],
+  "exclude": [
+    "dist",
+    "lib",
+    "node_modules"
+  ]
 }

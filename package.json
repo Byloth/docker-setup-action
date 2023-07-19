@@ -1,6 +1,6 @@
 {
   "name": "@byloth/docker-setup-action",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "An action to easily set up a Docker build environment with some useful environment variables.",
   "keywords": [
     "github-actions",
@@ -12,7 +12,6 @@
   "bugs": {
     "url": "https://github.com/Byloth/docker-setup-action/issues"
   },
-  "license": "GPL-3.0",
   "author": {
     "name": "Matteo Bilotta",
     "email": "me@byloth.net",
@@ -22,24 +21,26 @@
     "type": "git",
     "url": "git+https://github.com/Byloth/docker-setup-action.git"
   },
+  "license": "GPL-3.0",
+  "type": "module",
   "main": "./lib/index.js",
   "scripts": {
     "build": "tsc && ncc build",
-    "lint": "eslint --ext .js,.json,.ts --ignore-path .gitignore .",
+    "lint": "eslint --ext .cjs,.js,.json,.ts --ignore-path .gitignore .",
     "lint:prod": "export NODE_ENV=\"production\" && yarn lint",
     "ci": "yarn install --frozen-lockfile"
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "slugify": "^1.6.5"
+    "slugify": "^1.6.6"
   },
   "devDependencies": {
-    "@byloth/eslint-config-typescript": "^2.4.0",
-    "@types/node": "^18.11.18",
-    "@typescript-eslint/eslint-plugin": "^5.47.0",
-    "@typescript-eslint/parser": "^5.47.0",
-    "@vercel/ncc": "^0.36.0",
-    "eslint": "^8.30.0",
-    "typescript": "^4.9.4"
+    "@byloth/eslint-config-typescript": "^2.6.2",
+    "@types/node": "^20.4.2",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "@vercel/ncc": "^0.36.1",
+    "eslint": "^8.45.0",
+    "typescript": "^5.1.6"
   }
 }

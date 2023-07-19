@@ -1,3 +1,3 @@
-import { run } from "./hooks";
+import { run } from "./hooks.js";
 
 run();

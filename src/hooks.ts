@@ -1,7 +1,7 @@
 import * as core from "@actions/core";
-import slugify from "slugify";
 
-import Context from "./context";
+import Context from "./context.js";
+import slugify from "./vendors/slugify.js";
 
 export async function run(): Promise<void>
 {
