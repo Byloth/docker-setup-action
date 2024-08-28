@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "lib": [
       "ESNext",
@@ -10,7 +10,9 @@
       "WebWorker"
     ],
     "strict": true,
+    "noFallthroughCasesInSwitch": true,
     "noImplicitThis": true,
+    "noImplicitReturns": true,
     "sourceMap": true,
     "declaration": true,
     "skipLibCheck": true,
@@ -20,6 +22,7 @@
     "verbatimModuleSyntax": true,
     "experimentalDecorators": true,
     "useDefineForClassFields": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "outDir": "./lib",
